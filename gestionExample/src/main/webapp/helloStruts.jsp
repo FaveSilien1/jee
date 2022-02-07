@@ -9,8 +9,23 @@
 </head>
 <body>
 
-<h2><s:property value="messageStore.message"/></h2>
+<s:url var="indexEN" namespace="/" >
+		<s:param name="request_locale">en</s:param>
+	</s:url>
+	<s:a href="%{indexEN}">English</s:a>
 
+	<s:url var="indexFR" namespace="/" >
+		<s:param name="request_locale">fr</s:param>
+	</s:url>
+	<s:a href="%{indexFR}">France</s:a>
+
+<h2><s:property value="messageStore.message"/></h2>
+<!-- <h2>Welcome !<s:property value="name"/></h2> -->
+<h2><s:property value="personne"/></h2>
+<h2><s:property value="getText('global.success')"/></h2>
+
+
+	
 
 </body>
 </html>
