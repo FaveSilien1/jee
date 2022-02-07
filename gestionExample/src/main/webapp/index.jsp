@@ -1,4 +1,4 @@
-<%@page import="java.util.Date" %>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,7 +21,7 @@
             <h2>Application<br> JAVA EE</h2>
             <p>Example Servlet.</p>
             <br>
-            <%= new Date() %>
+         
          </div>
       </div>
       <div class="main">
