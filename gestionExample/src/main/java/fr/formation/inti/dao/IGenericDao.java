@@ -3,6 +3,8 @@ package fr.formation.inti.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.Session;
+
 
 public interface IGenericDao<T, I extends Serializable> {
 	
@@ -15,12 +17,8 @@ public interface IGenericDao<T, I extends Serializable> {
 	T findById(I i);
 	
 	List<T> findAll();
+	
+	public Session getCurrentSession();
 
-	void commitTransaction();
-	
-	void rollBackTransaction();
-	
-	void beginTransaction();
-	
-	void close();
+
 }

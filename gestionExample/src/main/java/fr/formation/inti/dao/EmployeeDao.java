@@ -1,5 +1,8 @@
 package fr.formation.inti.dao;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
@@ -22,6 +25,19 @@ public class EmployeeDao extends GenericDaoHibernate<Employee, Integer> implemen
 			dao = new EmployeeDao();
 		return dao;
 	}
+	
+	@PostConstruct
+	private void postConstruct() {
+		log.info("------------ init dao : @PostConstruct --------------");
+	}
 
+	@PreDestroy
+	private void preDestroy() {
+		log.info("------------ destroy dao  --------------");
+		if (dao != null) {
+			log.info("------------ dao : @PreDestroy close sessionFactory --------------");
+			
+		}
+	}
 	
 }
