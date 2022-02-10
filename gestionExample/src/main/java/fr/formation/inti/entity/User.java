@@ -11,17 +11,18 @@ import javax.persistence.Table;
 
 //Table base de donnée   T_User
 @Entity
-@Table(name="t_users")
+@Table(name="t_user")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
+	@Column(name = "id_user")
 	private Integer userId;
 	private String login;
 	private String password;
 	@OneToOne
 	@JoinColumn(name = "emp_id", nullable = false)
 	private Employee emp;
+	@Column(name = "connection_number")
 	private Integer connectionNumber;
 	
 	
